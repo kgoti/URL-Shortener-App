@@ -11,7 +11,10 @@ import ShortenForm from "./components/ShortenForm";
 import UrlTable    from "./components/UrlTable";
 import Header      from "./components/Header";
 
-const API = "/api/urls";
+const API_BASE =
+  process.env.REACT_APP_API_URL || "http://localhost:5000";
+
+const API = `${API_BASE}/api/urls`;
 
 function App() {
   const [urls, setUrls]       = useState([]);   // all shortened URLs from the DB
